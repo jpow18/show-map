@@ -1,3 +1,43 @@
+<?php
+
+// Define the API endpoint URL
+$url = "https://api.phish.net/v5/shows/showyear/1989.json?apikey=1D0A891F8076BD89B4BD&order_by=showdate";
+
+// Set the API key
+$apiKey = "1D0A891F8076BD89B4BD";
+
+// Initialize cURL session
+$ch = curl_init();
+
+// Set cURL options
+curl_setopt($ch, CURLOPT_URL, $url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_HTTPHEADER, [
+  "X-API-Key: $apiKey"
+]);
+
+// Execute the cURL request
+$response = curl_exec($ch);
+
+// Check for errors
+if (curl_errno($ch)) {
+  // Handle the error
+  echo "cURL error: " . curl_error($ch);
+  exit;
+}
+
+// Close the cURL session
+curl_close($ch);
+
+// Decode the JSON response
+$data = json_decode($response, true);
+var_dump($data);
+// Access the data
+//echo $data["1D0A891F8076BD89B4BD"];
+
+?>
+
+
 <!DOCTYPE html>
 <html>
 
@@ -20,7 +60,7 @@
       <button type="reset">Reset</button>
     </form>
     <section id="show-list">
-      <h2>Validated Shows:</h2>
+      <h3>Your Shows:</h3>
       <ul>
         <!-- Show entries will be added here -->
       </ul>
