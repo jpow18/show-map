@@ -42,39 +42,17 @@ echo $data["data"][0]["city"];
 <!DOCTYPE html>
 <html>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Phish Map</title>
-  <link rel="stylesheet" type="text/css" href="./css/main.css">
-</head>
+<?php include("./view/head.php") ?>
 
 <body>
-  <header>
-    <h1>Phish Map</h1>
-  </header>
+  <?php include("./view/header.php") ?>
+
   <main>
-    <form id="show-form">
-      <label for="show-input">Enter Show Date (YYYY-MM-DD):</label>
-      <input type="text" id="show-input" pattern="\d{4}-\d{2}-\d{2}" title="Date must be in YYYY-MM-DD format" placeholder="2014-07-03" >
-      <button type="submit">Submit</button>
-      <button type="reset">Reset</button>
-    </form>
-    <section id="show-list">
-      <h3>Your Shows:</h3>
-      <ul>
-        <!-- Show entries will be added here -->
-      </ul>
-    </section>
-    <button id="map-shows">Map Your Shows</button>
+    <?php include("./view/form.php") ?>
+    <?php include("./view/list.php") ?>
+
   </main>
-  <footer>
-    <p>
-      Contact: <a href="mailto:info@phishmap.com">info@phishmap.com</a><br>
-      Copyright &copy; 2023 Phish Map<br>
-      <a href="https://phish.net">Phish.net</a>
-    </p>
-  </footer>
+  <?php include("./view/footer.php") ?>
 </body>
 
 </html>
