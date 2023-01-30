@@ -31,7 +31,7 @@ curl_close($ch);
 
 // Decode the JSON response
 $data = json_decode($response, true);
-//var_dump($data);
+var_dump($data);
 
 // Access the data
 echo $data["data"][0]["city"];
