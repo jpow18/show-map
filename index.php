@@ -1,7 +1,7 @@
 <?php
 
 // Define the API endpoint URL
-$url = "https://api.phish.net/v5/shows/showyear/1989.json?apikey=1D0A891F8076BD89B4BD&order_by=showdate";
+$url = "https://api.phish.net/v5/setlists/showdate/2014-07-03.json?apikey=1D0A891F8076BD89B4BD&order_by=showdate";
 
 // Set the API key
 $apiKey = "1D0A891F8076BD89B4BD";
@@ -31,9 +31,10 @@ curl_close($ch);
 
 // Decode the JSON response
 $data = json_decode($response, true);
-var_dump($data);
+//var_dump($data);
+
 // Access the data
-//echo $data["1D0A891F8076BD89B4BD"];
+echo $data["data"][0]["city"];
 
 ?>
 
