@@ -2,10 +2,11 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  background-color: #E6E6E6;
 }
 
 header {
-  background-color: #9b59b6;
+  background-color: #87CEFA;
   color: #fff;
   display: flex;
   flex-wrap: wrap;
@@ -40,9 +41,8 @@ nav a {
 }
 
 main {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 20px;
+  display: flex;
+  justify-content: center;
   padding: 20px;
 }
 
@@ -50,53 +50,53 @@ main {
   align-items: center;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
+  width: 80%;
 }
 
-form {
-  background-color: #ecf0f1;
+.left-form,
+.right-form {
+  background-color: #FFF8DC;
   border-radius: 10px;
-  box-shadow: 2px 2px 10px;
-    padding: 20px;
-      text-align: center;
-      width: 60%;
-    }
-    
-    input[type="text"] {
-      border: none;
-      border-bottom: 2px solid #000;
-      margin-bottom: 20px;
-      padding: 10px;
-      width: 100%;
-    }
-    
-    input[type="submit"] {
-      background-color: #9b59b6;
-      border: none;
-      border-radius: 10px;
-      color: #fff;
-      cursor: pointer;
-      padding: 10px 20px;
-    }
-    
-    footer {
-      background-color: #9b59b6;
-      color: #fff;
-      display: flex;
-      justify-content: center;
-      padding: 20px;
-    }
-    
-    @media only screen and (max-width: 600px) {
-      main {
-        grid-template-columns: 1fr;
-      }
-    
-      form {
-        width: 80%;
-      }
-    
-      footer p {
-        text-align: center;
-      }
-    }
+  box-shadow: 2px 2px 10px #A9A9A9;
+  padding: 20px;
+  text-align: center;
+  width: 40%;
+}
+
+input[type="text"] {
+  border: none;
+  border-bottom: 2px solid #000;
+  margin-bottom: 20px;
+  padding: 10px;
+  width: 100%;
+}
+
+input[type="submit"] {
+  background-color: #87CEFA;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+  padding: 10px 20px;
+}
+
+footer {
+  background-color: #87CEFA;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+  .form-container {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .left-form,
+  .right-form {
+    width: 80%;
+  }
+}
